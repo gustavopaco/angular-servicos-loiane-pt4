@@ -1,0 +1,19 @@
+<div class="mb-3">
+  <!--Note: Listando cursos vindos do CursosService-->
+  <h2 class="text-center">Service Singleton</h2>
+  <h6 class="text-center">Criar curso Component</h6>
+  <ul>
+    <li *ngFor="let curso of cursosEmitidos, index as i">
+      {{ i + 1 }}/{{ cursosEmitidos.length }} - {{ curso }}
+    </li>
+  </ul>
+
+  <div class="mb-3">
+    <!--  Note: Adicionando um novo curso a lista de cursos, a partir do CursosService-->
+    <input type="text" #cursoEscolhido>
+  </div>
+  <div class="mb-3">
+    <button class="btn btn-primary" (click)="onAddCurso(cursoEscolhido.value)">Add Curso</button>
+  </div>
+</div>
+<app-receber-curso-criado></app-receber-curso-criado>
